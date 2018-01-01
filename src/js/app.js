@@ -145,7 +145,7 @@ App = {
   listenToEvents: function() {
     App.contracts.ChainList.deployed().then(function(instance) {
       instance.sellArticleEvent({}, {
-        fromBlock: 0,
+        fromBlock: 'latest',
         toBlock: 'latest'
       }).watch(function(error, event) {
         if (!error) {
@@ -157,7 +157,7 @@ App = {
       });
 
       instance.buyArticleEvent({}, {
-        fromBlock: 0,
+        fromBlock: 'latest',
         toBlock: 'latest'
       }).watch(function(error, event) {
         if (!error) {
